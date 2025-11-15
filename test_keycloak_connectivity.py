@@ -19,7 +19,7 @@ CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 # If we deal with bad documentation, we can get the endpoints from here
 OIDC_CONFIG_URL = ".well-known/openid-configuration"
 OIDC_CONFIG = requests.get(f"{KEYCLOAK_URL}/realms/master/{OIDC_CONFIG_URL}").json()
-# This would then should us that there are, amongst others, authorization and token endpoints
+# This then shows us that there are, amongst others, authorization and token endpoints
 endpoints = {k: v for k, v in OIDC_CONFIG.items() if k.endswith("endpoint")}
 
 # For the purposes of this assignment, we will continue with the token endpoint
