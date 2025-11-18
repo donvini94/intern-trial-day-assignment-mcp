@@ -245,7 +245,7 @@ def test_get_realms_with_existing_token(keycloak_client, mock_token_response):
         status=200,
     )
 
-    realms = keycloak_client.get_realms()
+    _ = keycloak_client.get_realms()
 
     # Verify the existing token was used
     assert len(responses.calls) == 1
@@ -273,7 +273,7 @@ def test_get_realms_token_expired(keycloak_client, mock_token_response):
         status=200,
     )
 
-    realms = keycloak_client.get_realms()
+    _ = keycloak_client.get_realms()
 
     # Verify both endpoints were called
     assert len(responses.calls) == 2
@@ -457,7 +457,7 @@ def test_client_flow_documentation():
     but it serves as documentation for how the client should be used.
     """
     # Step 1: Initialize the client
-    client = KeycloakClient(
+    _ = KeycloakClient(
         base_url="http://localhost:8080",
         client_id="admin-cli",
         client_secret="secret",
