@@ -193,13 +193,13 @@ Defines custom exception classes:
 
 ### `keycloak_models.py`
 
-Contains TypedDict definitions for API responses:
+Contains Pydantic Models for API responses:
 
 - `RealmRepresentation`: Structure of a realm object
 - `UserRepresentation`: Structure of a user object
 - `TokenResponse`: Structure of an OAuth2 token response
 
-**Why TypedDict?** Provides type hints for dictionary structures, improving IDE autocomplete and type checking.
+**Why Pydantic?** Provides type hints and validation for API responses, improving IDE autocomplete and type checking.
 
 ### `client.py`
 
