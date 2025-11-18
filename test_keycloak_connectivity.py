@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # First, we want to find out which endpoint to use for authentication of our MCP server
 # Usually, the documentation is very clear about the available endpoints and what they do
 # OpenID Connect also standardizes a lot
-# The specific endpoints are listed https://www.keycloak.org/securing-apps/oidc-layers
+# The specific endpoints are listed at https://www.keycloak.org/securing-apps/oidc-layers
 
 # Never keep secrets in your code!
 load_dotenv()
