@@ -55,3 +55,10 @@ select = [
     "W",   # pycodestyle warnings
     "F",   # pyflakes (unused imports, undefined names)
 ]
+
+[tool.pyright]
+# Configuration for Pyright/Basedpyright type checker
+include = ["src", "test"]
+extraPaths = ["src"]
+pythonVersion = "3.13"
+typeCheckingMode = "basic"

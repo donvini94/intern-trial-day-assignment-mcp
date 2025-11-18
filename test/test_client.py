@@ -14,7 +14,6 @@ from pathlib import Path
 
 import pytest
 import responses
-from requests.exceptions import HTTPError
 
 # Add src directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -311,7 +310,9 @@ def test_get_users_success(keycloak_client, mock_token_response):
     assert users[0].username == "john.doe"
 
     # Verify query parameters were sent
-    assert "max=50" in responses.calls[-1].request.url
+    url = responses.calls[-1].request.url
+    assert url is not None
+    assert "max=50" in url
 
 
 def test_get_users_empty_realm():
